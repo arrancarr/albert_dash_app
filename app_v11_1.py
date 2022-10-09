@@ -608,4 +608,5 @@ def clustered_map(n_clicks, year, n_clusters, indicators):
     fig.layout.geo.coastlinecolor = 'gray'
     return fig
 
-app.run_server(port=8992, debug=True)
+if __name__ == '__main__':
+    app.run_server(debug=False)
