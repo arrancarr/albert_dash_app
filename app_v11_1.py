@@ -111,10 +111,10 @@ main_layout = html.Div([
                     dbc.Tab([
                         html.Ul([
                             html.Br(),
-                            html.Li('Book title: Interactive Dashboards and Data Apps with Plotly and Dash'),
+                            html.Li('Submitted By: Albert Poon'),
                             html.Li(['GitHub repo: ',
-                                    html.A('https://github.com/PacktPublishing/Interactive-Dashboards-and-Data-Apps-with-Plotly-and-Dash',
-                                            href='https://github.com/PacktPublishing/Interactive-Dashboards-and-Data-Apps-with-Plotly-and-Dash')
+                                    html.A('https://github.com/arrancarr/albert_dash_app',
+                                            href='https://github.com/arrancarr/albert_dash_app')
                                     ])
                         ])
                     ], label='Project Info')
