@@ -1,14 +1,11 @@
 import dash
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import html, dcc, dash_table
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 from dash.dependencies import Output, Input, State
 import plotly.express as px
 from dash.exceptions import PreventUpdate
-from dash_table import DataTable
 import pandas as pd
-from dash_table import DataTable
 import re
 import numpy as np
 from sklearn.cluster import KMeans
@@ -545,7 +542,7 @@ def display_histogram(years, indicator, nbins):
     fig.add_annotation(text=indicator, x=0.5, y=-0.12, xref='paper', yref='paper', showarrow=False)
     fig.layout.paper_bgcolor = '#E5ECF6'
     
-    table = DataTable(columns=[{'name': col, 'id': col}
+    table = dash_table.DataTable(columns=[{'name': col, 'id': col}
                                for col in df[['Country Name', 'year', indicator]].columns],
                   data=df[['Country Name', 'year', indicator]].to_dict('records'),
                       
