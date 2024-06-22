@@ -23,9 +23,9 @@ app = dash.Dash(__name__,
                             'content': 'width=device-width, initial-scale=1.0, maximum-scale=4, minimum-scale=0.5,'}],
                 external_stylesheets=[dbc.themes.COSMO])
 server = app.server 
-poverty_data = pd.read_csv('../data/PovStatsData.csv')
-poverty = pd.read_csv('../data/poverty.csv', low_memory=False)
-series = pd.read_csv('../data/PovStatsSeries.csv')
+poverty_data = pd.read_csv('/data/PovStatsData.csv')
+poverty = pd.read_csv('/data/poverty.csv', low_memory=False)
+series = pd.read_csv('/data/PovStatsSeries.csv')
 
 gini = 'GINI index (World Bank estimate)'
 gini_df = poverty[poverty[gini].notna()]
@@ -61,7 +61,7 @@ perc_pov_years = sorted(set(perc_pov_df['year']))
 
 cividis0 = px.colors.sequential.Cividis[0]
 
-country_df = pd.read_csv('../data/PovStatsCountry.csv').drop(['Unnamed: 30'], axis=1)
+country_df = pd.read_csv('/data/PovStatsCountry.csv').drop(['Unnamed: 30'], axis=1)
 countries = poverty[poverty['is_country']]['Country Name'].drop_duplicates().sort_values().tolist()
 
 def make_empty_fig():
